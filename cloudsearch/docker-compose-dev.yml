@@ -1,0 +1,20 @@
+version: '2'
+services:
+  dhp-mariadb:
+    privileged: true
+    image: mariadb:10.3.10
+    hostname: dhp-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: '!Dpcore00'
+      TZ: Asia/Seoul
+    stdin_open: true
+    volumes:
+    - /data/meta_data/cloudsearch/cloudsearch_db:/var/lib/mysql
+    tty: true
+    ports:
+    - 3308:3306/tcp
+    command:
+    - --character-set-server=utf8
+    - --collation-server=utf8_general_ci
+    labels:
+      io.rancher.scheduler.affinity:host_label: poc02=02
