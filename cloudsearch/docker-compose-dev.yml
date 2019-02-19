@@ -1,9 +1,9 @@
 version: '2'
 services:
-  dhp-mariadb:
+  cloudsearch-mariadb:
     privileged: true
     image: mariadb:10.3.10
-    hostname: dhp-mariadb
+    hostname: cloudsearch-mariadb
     environment:
       MYSQL_ROOT_PASSWORD: '!Dpcore00'
       TZ: Asia/Seoul
